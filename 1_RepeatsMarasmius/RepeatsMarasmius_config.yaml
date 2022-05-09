@@ -1,0 +1,27 @@
+# Configuration file of RepeatsMarasmius.smk
+# ==================================================
+# Sandra Lorena Ament Velasquez
+# Johannesson Lab, Evolutionary Biology Center, Uppsala University, Sweden
+# 2020/10/30
+# +++++++++++++++++++++++++++++++++++++++++++++++++
+
+## All samples
+SampleIDs: ["E1", "W6", "N11", "S3", "E2", "W9", "N18", "S1"]
+
+## Path to assemblies
+path2data: "path/to/assemblies"
+
+## TE library
+TElib: "data/maror.repeatlib2.0.fasta"
+
+## Scripts
+gtfRM2gff: "scripts/GenomeAnnotation/gtfRM2gff.py" # You have to get it from my other repo https://github.com/SLAment/Genomics
+totalcovergff: "scripts/GenomeAnnotation/totalcovergff.py" # You have to get it from my other repo https://github.com/SLAment/Genomics
+RepeatsMar: "scripts/RepeatsMar.R"
+
+## Environments
+plotr: "envs/plotr.yaml"
+
+## Parameters
+mincount: 0 # Minimum count of a TE in the RepeatMasker output to be reatained per sample
+outprefix: "allsamples"

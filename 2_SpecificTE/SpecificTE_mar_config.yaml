@@ -1,0 +1,27 @@
+# Configuration file of SpecificTE.smk
+# ==================================================
+# Sandra Lorena Ament Velasquez, based on Valentina Peona's SpecificTE pipeline
+# Johannesson Lab, Evolutionary Biology Center, Uppsala University, Sweden
+# 2021/02/18
+# +++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Samples (at least two samples needed)
+## Nucleotype A (also known as HDa)
+SampleIDs: ["E1", "W6", "N11", "S3"]
+## Nucleotype B (Hdb)
+# SampleIDs: ["E2", "W9", "N18", "S1"]
+
+## Path to assemblies and repeatmasker gffs (without trailing '/'!)
+path2assemblies: "path/to/assemblies"
+path2repeats: "../1_RepeatsMarasmius/RepeatMasker" # Produced after running this pipeline
+
+## File with the names of all the repeats in the library
+outprefix_file: "data/allsamples_repeats_count_min0.txt" # provided in the repository
+
+## Filtering parameters
+minRMlen: 120 # Threshold for the final filtering, minimum size of a RepeatMasker feature in the raw data to be considered. Smallest non-satellite element in library is MarorCMC-4, which is 128 bp. 
+BUFFER: 5000 # The size of the flanking regions to find empty sites
+PERBUF: 0.8 # percentage of BUFFER that should be present in the empty sites
+PERID: 99 # Minimal percentage of identity for BLAST searches of the flanking regions of TE insertions
+VICINITY: 45000 # Max size of a TE + flanks (the largest normal repeat in the library is maror5-1891#LINE/L2 (~17052 bp))
+HOWCLOSE: 20 # How close should the flanks be in the empty sites
